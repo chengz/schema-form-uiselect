@@ -27,6 +27,17 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
           { value: 'three', label: 'label3'}
         ]
       },
+      select2: {
+        title: 'Single Select',
+        type: 'string',
+        format: 'uiselect',
+        description: 'Only single item is allowd',
+        enum: [
+          { value: 'one', label: 'label1'},
+          { value: 'two', label: 'label2'},
+          { value: 'three', label: 'label3'}
+        ]
+      },
       multiselect: {
         title: 'Multi Select',
         type: 'array',
@@ -37,6 +48,18 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
           { value: 'two', label: 'label2'},
           { value: 'three', label: 'label3'}
         ]
+      },
+      another: {
+        title: 'Multi Select 2',
+        type: 'array',
+        format: 'uiselect',
+        description: 'Multi single items arre allowd',
+        default: [],
+        enum: [
+          { value: 'one', label: 'labelx'},
+          { value: 'two', label: 'labelc'},
+          { value: 'three', label: 'label3'}
+        ]
       }
     }
   };
@@ -44,6 +67,12 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
     'name',
      {
        key: 'select'
+     },
+     {
+       key: 'select2'
+     },
+     {
+       key: 'another'
      },
      {
        key: 'multiselect'
@@ -61,5 +90,4 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
   $scope.submitted = function(form){
     console.log($scope.model);
   };
-  console.log(_.where($scope.schema.properties.select.enum, {value: 'three' })[0]);
 });
