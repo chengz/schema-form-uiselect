@@ -1,0 +1,55 @@
+{
+  "name": "angular-schema-form",
+  "main": [
+    "dist/schema-form.min.js",
+    "dist/bootstrap-decorator.min.js",
+    "dist/bootstrap-datepicker.min.js"
+  ],
+  "version": "0.7.3",
+  "authors": [
+    "Textalk",
+    "David Jensen <david.lgj@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "angular",
+    "angularjs",
+    "form",
+    "json",
+    "json-schema",
+    "schema"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "coverage"
+  ],
+  "dependencies": {
+    "angular": ">= 1.2",
+    "tv4": "~1.0.15",
+    "angular-sanitize": ">= 1.2",
+    "objectpath": "~1.0.4"
+  },
+  "devDependencies": {
+    "angular-ui-ace": "bower",
+    "angular-schema-form-datepicker": ">= 0.1.0",
+    "jquery": "~2.1.1",
+    "angular-mocks": ">= 1.2",
+    "angular-schema-form-colorpicker": "~0.1.0"
+  },
+  "homepage": "https://github.com/Textalk/angular-schema-form",
+  "_release": "0.7.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.7.3",
+    "commit": "ddcb1e3e69c9467c07a7b821645ca1029471c219"
+  },
+  "_source": "git://github.com/Textalk/angular-schema-form.git",
+  "_target": ">= 0.7",
+  "_originalSource": "angular-schema-form"
+}

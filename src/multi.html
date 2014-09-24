@@ -1,0 +1,12 @@
+<div class="form-group" ng-class="{'has-error': hasError()}" ng-init="models=(form.schema.enum | whereMulti : 'value' : $$value$$)">
+  <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
+  <div class="form-group">
+    <ui-select multiple ng-model="models" theme="bootstrap" on-select="$$value$$.push($item.value)">
+      <ui-select-match placeholder="{{form.placeholder || 'defaut select'}}">{{$item.label}}</ui-select-match>
+      <ui-select-choices repeat="item in form.schema.enum | propsFilter: {label: $select.search}">
+        <div ng-bind-html="item.label | highlight: $select.search"></div>
+      </ui-select-choices>
+    </ui-select>
+    <span class="help-block">{{ (hasError() && errorMessage(schemaError())) || form.description}}</span>
+  </div>
+</div>

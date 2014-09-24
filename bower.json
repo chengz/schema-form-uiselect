@@ -1,0 +1,38 @@
+{
+  "name": "schema-form-uiselect",
+  "main": [
+    "schema-form-uiselect.min.js"
+  ],
+  "version": "0.1.0",
+  "authors": [
+    "Cheng Zhu",
+    "Cheng Zhu<cheng@aqmin.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "angular-schema-form",
+    "schema-form",
+    "form",
+    "json",
+    "json-schema",
+    "schema"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "coverage"
+  ],
+  "dependencies": {
+    "angular-ui-select": ">= 0.7.0",
+    "underscore": ">= 1.7.0"
+  },
+  "devDependencies": {
+    "angular-schema-form": ">= 0.7",
+    "angular-mocks": ">= 1.2"
+  }
+}
