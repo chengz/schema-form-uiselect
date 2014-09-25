@@ -53,7 +53,7 @@ person_list: {
   title: 'Person List',
   type: 'string',
   format: 'uiselect',
-  enum: [
+  items: [
     { value: '1', label: 'Person 1' },
     { value: '2', label: 'Person 2' }
   ]
@@ -62,7 +62,7 @@ persons_list: {
   title: 'Persons List',
   type: 'array',
   format: 'uiselect',
-  enum: [
+  items: [
     { value: '1', label: 'Person 1' },
     { value: '2', label: 'Person 2' },
     { value: '3', label: 'Person 3' }
