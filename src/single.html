@@ -1,12 +1,13 @@
-<div class="form-group" ng-class="{'has-error': hasError()}" ng-init="select_models=(form.schema.enum | where : {value: $$value$$})">
+<div class="form-group" ng-class="{'has-error': hasError(), 'has-success': hasSuccess()}" ng-init="select_models=(form.schema.items | where : {value: $$value$$})">
   <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
-  <div class="form-group">
-    <ui-select ng-init="select_model.selected=select_models[0]" ng-model="select_model.selected" theme="bootstrap" ng-disabled="form.disabled" on-select="$$value$$=$item.value" class="{{form.options.uiClass}}">
+  <div class="form-group" ng-init="select_model.selected=select_models[0]">
+    <ui-select ng-model="select_model.selected" theme="bootstrap" ng-disabled="form.disabled" on-select="$$value$$=$item.value" class="{{form.options.uiClass}}">
       <ui-select-match placeholder="{{form.placeholder || form.schema.placeholder || ('placeholders.select' | translate)}}">{{select_model.selected.label}}</ui-select-match>
-      <ui-select-choices repeat="item in form.schema.enum | propsFilter: {label: $select.search}">
+      <ui-select-choices repeat="item in form.schema.items | propsFilter: {label: $select.search}">
         <div ng-bind-html="item.label | highlight: $select.search"></div>
       </ui-select-choices>
     </ui-select>
+    <input type="hidden" sf-changed="form" ng-model="select_model.selected.value" schema-validate="form" />
     <span class="help-block">{{ (hasError() && errorMessage(schemaError())) || form.description}}</span>
   </div>
 </div>

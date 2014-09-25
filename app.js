@@ -21,7 +21,7 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
         type: 'string',
         format: 'uiselect',
         description: 'Only single item is allowd',
-        enum: [
+        items: [
           { value: 'one', label: 'label1'},
           { value: 'two', label: 'label2'},
           { value: 'three', label: 'label3'}
@@ -32,7 +32,7 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
         type: 'string',
         format: 'uiselect',
         description: 'Only single item is allowd',
-        enum: [
+        items: [
           { value: 'one', label: 'label1'},
           { value: 'two', label: 'label2'},
           { value: 'three', label: 'label3'}
@@ -43,7 +43,9 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
         type: 'array',
         format: 'uiselect',
         description: 'Multi single items arre allowd',
-        enum: [
+        minItems: 1,
+        maxItems: 2,
+        items: [
           { value: 'one', label: 'label1'},
           { value: 'two', label: 'label2'},
           { value: 'three', label: 'label3'}
@@ -54,14 +56,15 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
         type: 'array',
         format: 'uiselect',
         description: 'Multi single items arre allowd',
-        default: [],
-        enum: [
+        minItems: 1,
+        items: [
           { value: 'one', label: 'labelx'},
           { value: 'two', label: 'labelc'},
           { value: 'three', label: 'label3'}
         ]
       }
-    }
+    },
+    required: ['select', 'another', 'select2', 'multiselect']
   };
   $scope.form = [
     'name',
@@ -87,10 +90,10 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
       }
   ];
   $scope.model = {
-    select: 'three',
     multiselect: ['one', 'three']
   };
   $scope.submitted = function(form){
+    $scope.$broadcast('schemaFormValidate')
     console.log($scope.model);
   };
 });

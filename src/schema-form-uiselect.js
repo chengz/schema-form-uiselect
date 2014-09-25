@@ -36,6 +36,28 @@ angular.module('schemaForm-uiselect', ['schemaForm', 'ui.select']).config(
     schemaFormDecoratorsProvider.createDirective('uimultiselect',
     'directives/decorators/bootstrap/uiselect/multi.html');
   }])
+  .directive("toggleModel", function() {
+    // some how we get this to work ...
+    return {
+      require: 'ngModel',
+      restrict: "A",
+      scope: {},
+      replace: true,
+      controller:function($scope)  {
+        $scope.$parent.$watch('form.select_models',function(){
+          if($scope.$parent.form.select_models.length == 0) {
+            $scope.$parent.insideModel = $scope.$parent.$$value$$;
+            if($scope.$parent.ngModel.$viewValue != undefined) {
+              $scope.$parent.ngModel.$setViewValue($scope.$parent.form.select_models);
+            }
+          } else {
+            $scope.$parent.insideModel = $scope.$parent.form.select_models;
+            $scope.$parent.ngModel.$setViewValue($scope.$parent.form.select_models);
+          }
+        });
+      },
+    };
+  })
   .filter('whereMulti', function() {
     return function(items, key, values) {
       var out = [];
