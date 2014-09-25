@@ -14,6 +14,7 @@ module.exports = function(config) {
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-sanitize/angular-sanitize.min.js',
+      'bower_components/angular-translate/angular-translate.min.js',
       'bower_components/angular-ui-select/dist/select.min.js',
       'bower_components/tv4/tv4.js',
       'bower_components/objectpath/lib/ObjectPath.js',

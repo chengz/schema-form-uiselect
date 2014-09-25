@@ -29,6 +29,7 @@
   ],
   "dependencies": {
     "angular-ui-select": ">= 0.7.0",
+    "angular-translate": ">= 2.4.0",
     "underscore": ">= 1.7.0"
   },
   "devDependencies": {

@@ -6,7 +6,7 @@
  * @name app
  * @type {angular.Module}
  */
-var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uiselect'])
+var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uiselect', 'pascalprecht.translate'])
 .controller('SelectController', function($scope){
   $scope.schema = {
     type: 'object',
@@ -66,7 +66,10 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
   $scope.form = [
     'name',
      {
-       key: 'select'
+       key: 'select',
+       options: {
+         uiClass: 'short'
+       }
      },
      {
        key: 'select2'
