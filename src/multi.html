@@ -2,7 +2,7 @@
   <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
   <div class="form-group">
     <ui-select multiple ng-model="form.select_models" theme="bootstrap" on-select="$$value$$.push($item.value)" on-remove="$$value$$.splice($$value$$.indexOf($item), 1)" class="{{form.options.uiClass}}">
-      <ui-select-match placeholder="{{form.placeholder || ('placeholder.select' | translate)}}">{{$item.label}}</ui-select-match>
+      <ui-select-match placeholder="{{form.placeholder || form.schema.placeholder || ('placeholders.select' | translate)}}">{{$item.label}}</ui-select-match>
       <ui-select-choices repeat="item in form.schema.enum | propsFilter: {label: $select.search}">
         <div ng-bind-html="item.label | highlight: $select.search"></div>
       </ui-select-choices>
