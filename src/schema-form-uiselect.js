@@ -36,6 +36,23 @@ angular.module('schemaForm-uiselect', ['schemaForm', 'ui.select']).config(
     schemaFormDecoratorsProvider.createDirective('uimultiselect',
     'directives/decorators/bootstrap/uiselect/multi.html');
   }])
+  .directive("toggleSingleModel", function() {
+    // some how we get this to work ...
+    return {
+      require: 'ngModel',
+      restrict: "A",
+      scope: {},
+      replace: true,
+      controller:function($scope)  {
+        $scope.$parent.$watch('select_model.selected',function(){
+          if($scope.$parent.select_model.selected != undefined) {
+            $scope.$parent.insideModel = $scope.$parent.select_model.selected.value;
+            $scope.$parent.ngModel.$setViewValue($scope.$parent.select_model.selected.value);
+          }
+        });
+      },
+    };
+  })
   .directive("toggleModel", function() {
     // some how we get this to work ...
     return {
@@ -44,7 +61,7 @@ angular.module('schemaForm-uiselect', ['schemaForm', 'ui.select']).config(
       scope: {},
       replace: true,
       controller:function($scope)  {
-        $scope.$parent.$watch('form.select_models',function(){
+        $scope.$parent.$watchCollection('form.select_models',function(){
           if($scope.$parent.form.select_models.length == 0) {
             $scope.$parent.insideModel = $scope.$parent.$$value$$;
             if($scope.$parent.ngModel.$viewValue != undefined) {

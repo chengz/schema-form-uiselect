@@ -7,7 +7,7 @@
         <div ng-bind-html="item.label | highlight: $select.search"></div>
       </ui-select-choices>
     </ui-select>
-    <input type="hidden" sf-changed="form" ng-model="select_model.selected.value" schema-validate="form" />
+    <input type="hidden" toggle-single-model sf-changed="form" ng-model="insideModel" schema-validate="form" />
     <span class="help-block">{{ (hasError() && errorMessage(schemaError())) || form.description}}</span>
   </div>
 </div>

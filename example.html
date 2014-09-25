@@ -29,6 +29,21 @@
     </style>
   </head>
   <body ng-controller='SelectController'>
-    <form form="selectForm" sf-schema="schema" sf-form="form" sf-model="model" ng-submit="submitted(selectForm)"></form>
+    <div class="box box-primary ng-cloak">
+      <div class="box-header">
+        <h3 class="box-title">{{$root.$state.current.data.label}} - {{model.name}}</h3>
+      </div>
+      <form name="roleForm" ng-submit="submitted(roleForm)">
+        <div class="box-body">
+          <div sf-schema="schema" sf-form="form" sf-model="model"></div>
+        </div>
+        <div class="box-footer">
+          <button type="submit" class="btn btn-primary btn-flat">{{ 'buttons.save' | translate }}</button>
+          <a ui-sref="roles" class="btn btn-warning btn-flat pull-right">{{ 'buttons.cancel' | translate }}</a>
+        </div>
+        </form>
+      </div>
+    </div>
+    
   </body>
 </html>

@@ -64,7 +64,7 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
         ]
       }
     },
-    required: ['select', 'another', 'select2', 'multiselect']
+    required: ['select', 'select2', 'multiselect']
   };
   $scope.form = [
     'name',
@@ -82,11 +82,6 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
      },
      {
        key: 'multiselect'
-     },
-     {
-        type: "submit",
-        style: "btn-info",
-        title: "OK"
       }
   ];
   $scope.model = {
