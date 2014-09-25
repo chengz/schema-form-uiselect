@@ -2,7 +2,7 @@
   <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
   <div class="form-group">
     <ui-select ng-init="select_model.selected=select_models[0]" ng-model="select_model.selected" theme="bootstrap" ng-disabled="form.disabled" on-select="$$value$$=$item.value" class="{{form.options.uiClass}}">
-      <ui-select-match placeholder="{{form.placeholder || ('defaut.select' | translate)}}">{{select_model.selected.label}}</ui-select-match>
+      <ui-select-match placeholder="{{form.placeholder || ('placeholder.select' | translate)}}">{{select_model.selected.label}}</ui-select-match>
       <ui-select-choices repeat="item in form.schema.enum | propsFilter: {label: $select.search}">
         <div ng-bind-html="item.label | highlight: $select.search"></div>
       </ui-select-choices>
