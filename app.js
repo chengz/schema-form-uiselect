@@ -64,7 +64,7 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
         ]
       }
     },
-    required: ['select', 'select2', 'multiselect']
+    required: ['select', 'select2', 'another', 'multiselect']
   };
   $scope.form = [
     'name',
