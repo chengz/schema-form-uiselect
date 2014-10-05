@@ -27,6 +27,17 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
           { value: 'three', label: 'label3'}
         ]
       },
+      number_select: {
+        title: 'Number Select',
+        type: 'number',
+        format: 'uiselect',
+        description: 'Only single item is allowd',
+        items: [
+          { value: 1, label: 'label1'},
+          { value: 2, label: 'label2'},
+          { value: 3, label: 'label3'}
+        ]
+      },
       select2: {
         title: 'Single Select',
         type: 'string',
@@ -74,6 +85,7 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
          uiClass: 'short'
        }
      },
+     'number_select',
      {
        key: 'select2'
      },

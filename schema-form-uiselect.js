@@ -16,6 +16,18 @@ angular.module('schemaForm-uiselect', ['schemaForm', 'ui.select']).config(
 
     schemaFormProvider.defaults.string.unshift(uiselect);
 
+    var uiselect = function(name, schema, options) {
+      if (schema.type === 'number' && schema.format == 'uiselect') {
+        var f = schemaFormProvider.stdFormObj(name, schema, options);
+        f.key  = options.path;
+        f.type = 'uiselect';
+        options.lookup[sfPathProvider.stringify(options.path)] = f;
+        return f;
+      }
+    };
+
+    schemaFormProvider.defaults.number.unshift(uiselect);
+
     var uimultiselect = function(name, schema, options) {
       if (schema.type === 'array' && schema.format == 'uiselect') {
         var f = schemaFormProvider.stdFormObj(name, schema, options);
