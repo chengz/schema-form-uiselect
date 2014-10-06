@@ -6,6 +6,7 @@
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="all" rel="stylesheet" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" media="screen" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
     <link href="bower_components/angular-ui-select/dist/select.css" media="screen" rel="stylesheet" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
@@ -19,6 +20,7 @@
     <script src="bower_components/angular-schema-form/dist/schema-form.min.js"></script>
     <script src="bower_components/angular-schema-form/dist/bootstrap-decorator.min.js"></script>
     <script src="bower_components/angular-underscore.js"></script>
+    <script src="ui-sortable.js"></script>
     <script src="schema-form-uiselect.js"></script>
     <script src="app.js"></script>
     <base href='/'>
@@ -28,6 +30,11 @@
       }
       .ui-select-bootstrap > .ui-select-match > .caret {
         display: none;
+      }
+      .ui-state-highlight {
+        display: inline-block;
+        width: 50px;
+        min-height: 100%;
       }
     </style>
   </head>

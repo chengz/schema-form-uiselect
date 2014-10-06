@@ -6,7 +6,7 @@
  * @name app
  * @type {angular.Module}
  */
-var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uiselect', 'pascalprecht.translate'])
+var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uiselect', 'pascalprecht.translate', 'ui.sortable'])
 .controller('SelectController', function($scope){
   $scope.schema = {
     type: 'object',
@@ -97,6 +97,7 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
       }
   ];
   $scope.model = {
+    number_select: 1,
     multiselect: ['one', 'three']
   };
   $scope.submitted = function(form){
