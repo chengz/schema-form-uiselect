@@ -93,19 +93,13 @@ angular.module('schemaForm-uiselect', ['schemaForm', 'ui.select']).config(
     return function(items, key, values) {
       var out = [];
 
-      if (angular.isArray(items)) {
-        items.forEach(function(item) {
-          var itemMatches = false;
-
-          for (var i = 0; i < values.length; i++) {
-            if (item[key] == values[i]) {
-              itemMatches = true;
+      if (angular.isArray(values)) {
+        values.forEach(function(value) {
+          for (var i = 0; i < items.length; i++) {
+            if (value == items[i][key]) {
+              out.push(items[i]);
               break;
             }
-          }
-
-          if (itemMatches) {
-            out.push(item);
           }
         });
       } else {

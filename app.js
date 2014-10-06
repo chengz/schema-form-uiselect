@@ -98,7 +98,7 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
   ];
   $scope.model = {
     number_select: 1,
-    multiselect: ['one', 'three']
+    multiselect: ['three', 'one']
   };
   $scope.submitted = function(form){
     $scope.$broadcast('schemaFormValidate')
