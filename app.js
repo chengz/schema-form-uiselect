@@ -55,11 +55,13 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
         format: 'uiselect',
         description: 'Multi single items arre allowd',
         minItems: 1,
-        maxItems: 2,
+        maxItems: 4,
         items: [
           { value: 'one', label: 'label1'},
           { value: 'two', label: 'label2'},
-          { value: 'three', label: 'label3'}
+          { value: 'three', label: 'label3'},
+          { value: 'four', label: 'label4'},
+          { value: 'five', label: 'label5'}
         ]
       },
       another: {
