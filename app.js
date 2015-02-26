@@ -7,7 +7,7 @@
  * @type {angular.Module}
  */
 var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uiselect', 'pascalprecht.translate', 'ui.sortable'])
-.controller('SelectController', function($scope){
+.controller('SelectController', function($scope, $rootScope){
   $scope.schema = {
     type: 'object',
     title: 'Select',
@@ -22,9 +22,9 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
         format: 'uiselect',
         description: 'Only single item is allowd',
         items: [
-          { value: 'one', label: 'label1'},
-          { value: 'two', label: 'label2'},
-          { value: 'three', label: 'label3'}
+          { value: 1, label: 'label1'},
+          { value: 2, label: 'label2'},
+          { value: 3, label: 'label3'}
         ]
       },
       number_select: {
@@ -79,6 +79,15 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
     },
     required: ['select', 'select2', 'another', 'multiselect']
   };
+  $scope.refreshSelect = function(schema, search) {
+    console.log('called');
+    console.log(search);
+    schema.items = [
+      { value: 'one', label: 'labelx'},
+      { value: 'two', label: 'labelc'},
+      { value: 'three', label: 'label3'}
+    ];
+  }
   $scope.form = [
     'name',
      {
