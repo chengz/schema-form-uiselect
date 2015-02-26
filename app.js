@@ -93,7 +93,9 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
      {
        key: 'select',
        options: {
-         uiClass: 'short'
+         uiClass: 'short',
+         refreshDelay: 100,
+         refreshMethod: $scope.refreshSelect
        }
      },
      'number_select',
@@ -104,7 +106,12 @@ var app = angular.module('app', ['angular-underscore/filters', 'schemaForm-uisel
        key: 'another'
      },
      {
-       key: 'multiselect'
+       key: 'multiselect',
+       options: {
+         uiClass: 'short',
+         refreshDelay: 100,
+         refreshMethod: $scope.refreshSelect
+       }
       }
   ];
   $scope.model = {

@@ -3,7 +3,9 @@
   <div class="form-group">
     <ui-select multiple sortable-options="{{form.sortableOptions}}" ng-model="form.select_models" theme="bootstrap" on-select="$$value$$.push($item.value)" on-remove="$$value$$.splice($$value$$.indexOf($item.value), 1)" class="{{form.options.uiClass}}">
       <ui-select-match placeholder="{{form.placeholder || form.schema.placeholder || ('placeholders.select' | translate)}}">{{$item.label}}</ui-select-match>
-      <ui-select-choices repeat="item in form.schema.items | propsFilter: {label: $select.search}">
+      <ui-select-choices repeat="item in form.schema.items | propsFilter: {label: $select.search}"
+         refresh="form.options.refreshMethod(form.schema, $select.search)"
+         refresh-delay="form.options.refreshDelay">
         <div ng-bind-html="item.label | highlight: $select.search"></div>
       </ui-select-choices>
     </ui-select>
