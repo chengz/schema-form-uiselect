@@ -74,7 +74,13 @@ angular.module('schemaForm-uiselect', ['schemaForm', 'ui.select']).config(
       restrict: "A",
       scope: {},
       replace: true,
-      controller: ['$scope', function($scope)  {
+      controller: ['$scope','sfSelect', function($scope,  sfSelect)  {
+        var list = sfSelect($scope.$parent.form.key, $scope.$parent.model);
+        //as per base array implemenation if the array is undefined it must be set as empty for data binding to work
+        if (angular.isUndefined(list)) {
+            list = [];
+            sfSelect($scope.$parent.form.key, $scope.$parent.model, list);
+        }
         $scope.$parent.$watch('form.select_models',function(){
           if($scope.$parent.form.select_models.length == 0) {
             $scope.$parent.insideModel = $scope.$parent.$$value$$;
